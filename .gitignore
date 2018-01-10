@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# c++
+/StashVenrici.sln
+/.suo
+/Browse.VC.db
+/Browse.VC.opendb
+/StashVenrici.vcxproj
+/StashVenrici.vcxproj.filters
