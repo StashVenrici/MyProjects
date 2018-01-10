@@ -1,0 +1,10 @@
+﻿  prog.cpp
+  function.cpp
+c:\users\home\documents\visual studio 2017\projects\hwpreprocessor\hwpreprocessor\function.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\home\documents\visual studio 2017\projects\hwpreprocessor\hwpreprocessor\function.cpp(79): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\home\documents\visual studio 2017\projects\hwpreprocessor\hwpreprocessor\function.cpp(146): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\home\documents\visual studio 2017\projects\hwpreprocessor\hwpreprocessor\function.cpp(171): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\home\documents\visual studio 2017\projects\hwpreprocessor\hwpreprocessor\function.cpp(181): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  HWpreprocessor.vcxproj -> C:\Users\Home\documents\visual studio 2017\Projects\HWpreprocessor\Debug\HWpreprocessor.exe
+  HWpreprocessor.vcxproj -> C:\Users\Home\documents\visual studio 2017\Projects\HWpreprocessor\Debug\HWpreprocessor.pdb (Partial PDB)
