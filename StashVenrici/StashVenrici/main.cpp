@@ -2,56 +2,11 @@
 #include <conio.h>
 #include <windows.h>
 #include <iomanip>
+#include "Point3d.h"
 
 using namespace std;
 
-class Point3d {
-private:
-	int x;
-	int y;
-	int z;
-public:
-	Point3d() {		//конструктор по умолчанию
-		x = 0;
-		y = 0;
-		z = 0;
-	}
-	Point3d(int xn, int yn, int zn) {	//конструктор с параметрами
-		x = xn;
-		y = yn;
-		z = zn;
-	}
-	void changeX(int xn) {	//
-		x = xn;
-	}
-	void changeY(int yn) {
-		y = yn;
-	}
-	void changeZ(int zn) {
-		z = zn;
-	}
 
-	void EnterCords() {
-		int xn = 0, yn = 0, zn = 0;
-		cout << "Enter x,y,z: ";
-		cin >> xn >> yn >> zn;
-		x = xn;
-		y = yn;
-		z = zn;
-	}
-	void ShowCoord() {
-		cout << "(" << x << ", " << y << ", " << z << ")" << endl;
-	}
-	int getx() {
-		return x;
-	}
-	int gety() {
-		return y;
-	}
-	int getz() {
-		return z;
-	}
-};
 
 
 void main() {
