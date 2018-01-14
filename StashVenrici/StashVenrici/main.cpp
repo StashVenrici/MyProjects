@@ -21,12 +21,7 @@ public:
 		y = yn;
 		z = zn;
 	}
-	void setCoord(int xn, int yn, int zn) {
-		x = xn;
-		y = yn;
-		z = zn;
-	}
-	void changeX(int xn) {
+	void changeX(int xn) {	//
 		x = xn;
 	}
 	void changeY(int yn) {
@@ -71,14 +66,18 @@ void main() {
 	//вывода данных, 
 	//реализуйте аксессоры для доступа к переменным членам.
 
-	Point3d a, b;
+	Point3d a, c;	//объект класса
 
-	a.ShowCoord();
-	a.setCoord(3, 2, 1);
-	a.ShowCoord();
+	a.ShowCoord();	//сработал конструктор со значениями по умолчанию
 
-	b.EnterCords();
+	Point3d b(1, 2, 3);		//инициализация с помощью конструктора с параметрами
 	b.ShowCoord();
+
+	c.EnterCords();		//ввод данных с клавиатуры
+	c.ShowCoord();
+
+	int x1 = c.getx();	//аксессор к координате x
+	cout << "\nx1 = " << x1;
 
 	_getch();
 }
