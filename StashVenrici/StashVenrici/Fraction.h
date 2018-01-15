@@ -21,10 +21,13 @@ public:
 	void EnterFraction();
 
 	Fraction addFraction(Fraction a);
+	Fraction subtrFraction(Fraction a);
+	Fraction multFraction(Fraction a);
+	Fraction divFraction(Fraction a);
 
 
 	void ShowFraction() {
-		cout << numerator << " / " << denomenator << endl;
+		cout << numerator << " / " << denomenator;
 	}
 	int getNUM() {
 		return numerator;

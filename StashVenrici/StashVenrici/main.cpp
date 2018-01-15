@@ -48,17 +48,44 @@ void main() {
 	*/
 
 	Fraction a(1, 3), b(1, 6);
-	a.ShowFraction();
+	/*a.ShowFraction();
 	b.ShowFraction();
 	a.EnterFraction();
-	a.ShowFraction();		//тест - дробь вводится и выводится
+	a.ShowFraction();*/		//тест - дробь вводится и выводится
 
-	Fraction c = a.addFraction(b);
+	Fraction c = a.addFraction(b);	//проверка работы сложения
 	a.ShowFraction();
-	cout << " + \n";
+	cout << " + ";
 	b.ShowFraction();
-	cout << " = \n";
+	cout << " = ";
 	c.ShowFraction();
+
+	cout << "\n\n";
+
+	Fraction d = a.subtrFraction(b);	//проверка работы вычитания
+	a.ShowFraction();
+	cout << " - ";
+	b.ShowFraction();
+	cout << " = ";
+	d.ShowFraction();
+
+	cout << "\n\n";
+
+	Fraction e = a.multFraction(b);	//проверка работы умножения
+	a.ShowFraction();
+	cout << " * ";
+	b.ShowFraction();
+	cout << " = ";
+	e.ShowFraction();
+
+	cout << "\n\n";
+
+	Fraction f = a.divFraction(b);	//проверка работы деления
+	a.ShowFraction();
+	cout << " / ";
+	b.ShowFraction();
+	cout << " = ";
+	f.ShowFraction();
 
 
 
