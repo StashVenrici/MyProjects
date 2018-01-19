@@ -5,6 +5,7 @@
 #include "Point3d.h"
 #include "Functions.h"
 #include "Fraction.h"
+#include "Student.h"
 
 
 using namespace std;
@@ -116,7 +117,20 @@ void main() {
 	Создайте статический массив типа “Студент”,
 	выведите его на экран.*/
 
+	Student A;
+	int MarkList[] = { 5,6,8,5,4 };
+	Student B(45, "Vasea Pupkin", 1, 6, 1987, "078787870", "Comrat", "Moldova", "Econom College", "IM-223", MarkList);
+	B.ShowStudent();
 
+	Student C = B;	//копирование объектов класса
+	cout << "Copy C=B: \n";
+	C.ShowStudent();
+
+	Student ArrStudents[3];		//статический массив типа “Студент”
+	cout << "Static array of Students:\n";
+	for (int i = 0; i < 3; i++) {
+		ArrStudents[i].ShowStudent();		//заполнен тестовыми значениями 8-)
+	}
 
 	_getch();
 }
