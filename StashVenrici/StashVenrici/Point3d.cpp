@@ -36,18 +36,18 @@ using namespace std;
 		z = zn;
 	}
 	
-	void Point3d::ShowCoord() {
+	void Point3d::ShowCoord() const {
 		cout << "(" << x << ", " << y << ", " << z << ")" << endl;
 	}
 	
-	int Point3d::getx() {
+	int Point3d::getx() const {
 		return x;
 	}
 	
-	int Point3d::gety() {
+	int Point3d::gety() const {
 		return y;
 	}
 	
-	int Point3d::getz() {
+	int Point3d::getz() const {
 		return z;
 	}

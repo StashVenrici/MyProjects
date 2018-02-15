@@ -14,8 +14,8 @@ public:
 	void changeZ(int zn);
 
 	void EnterCords();
-	void ShowCoord();
-	int getx();
-	int gety();
-	int getz();
+	void ShowCoord() const;
+	int getx() const;
+	int gety() const;
+	int getz() const;
 };

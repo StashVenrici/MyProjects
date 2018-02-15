@@ -18,6 +18,6 @@ public:
 	Student(int id, char *nm, int d, int m, int yr, char tl[], char ct[], char cn[], char sn[], char gn[], int mr[]);
 	void SetStudent(int id, char *nm, int d, int m, int yr, char tl[], char ct[], char cn[], char sn[], char gn[], int mr[]);
 	Student(const Student & obj); 		//конструктор копирования
-	void ShowStudent();
+	void ShowStudent() const;
 	~Student();
 };

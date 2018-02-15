@@ -64,7 +64,7 @@ using namespace std;
 		for (int i = 0; i < 5; i++) { marks[i] = obj.marks[i]; }
 	}
 
-	void Student::ShowStudent() {
+	void Student::ShowStudent() const{
 		cout << "Student ID:\t" << stID
 			<< "\nStudent name:\t" << name
 			<< "\nBirthday:\t" << b_day << "." << b_mnt << "." << b_year

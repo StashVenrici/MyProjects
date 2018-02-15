@@ -12,8 +12,10 @@ private:
 	int numerator;
 	int denomenator;
 public:
-	Fraction();	//конструктор по умолчанию
-		
+	Fraction() {	//конструктор по умолчанию
+		numerator = 0;
+		denomenator = 1;
+	}
 	Fraction(int a, int b); 	//конструктор с параметрами
 	
 	void setFraction(int a, int b);
@@ -26,13 +28,13 @@ public:
 	Fraction divFraction(Fraction a);
 
 
-	void ShowFraction() {
-		cout << numerator << " / " << denomenator;
+	void ShowFraction() const {
+		cout << numerator << " / " << denomenator << endl;
 	}
-	int getNUM() {
+	int getNUM() const{
 		return numerator;
 	}
-	int getDENOM() {
+	int getDENOM() const{
 		return denomenator;
 	}
 

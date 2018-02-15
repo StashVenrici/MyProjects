@@ -4,10 +4,6 @@
 
 using namespace std;
 
-	Fraction::Fraction() {	//конструктор по умолчанию
-		numerator = 1;
-		denomenator = 1;
-	}
 	Fraction::Fraction(int a, int b) {	//конструктор с параметрами
 		numerator = a;
 		denomenator = b;
