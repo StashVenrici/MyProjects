@@ -13,8 +13,6 @@ using namespace std;
 		denomenator = b;
 	}
 	void Fraction::EnterFraction() {
-		//int xn = 0, yn = 0, zn = 0;
-
 		cout << "Enter fraction: ";
 		cout << "\nnumerator = ";
 		cin >> numerator ;
@@ -22,7 +20,7 @@ using namespace std;
 		cin  >> denomenator;
 	}
 
-	Fraction Fraction::addFraction(Fraction a) {
+	Fraction Fraction::sumFraction(Fraction a) {
 		Fraction tmp;
 		int nok, nod, s1, s2;
 		nok = NOK(denomenator, a.denomenator); //нахождение наименьшего общего кратного
@@ -47,6 +45,7 @@ using namespace std;
 		s1 = nok / denomenator;	//находим дополнительные множители
 		s2 = nok / a.denomenator;
 		tmp.numerator = numerator*s1 - a.numerator*s2;	//числитель
+		if (tmp.numerator == 0) { tmp.setFraction(0, 1); return tmp; }
 		tmp.denomenator = nok;	//знаменатель
 		nod = NOD(tmp.numerator, tmp.denomenator);
 		if (nod == 1) return tmp;
@@ -88,7 +87,7 @@ using namespace std;
 
 	Fraction Fraction::operator+(const Fraction a) {
 		Fraction tmp;
-		tmp = this->addFraction(a);
+		tmp = this->sumFraction(a);
 		return tmp;
 	}
 

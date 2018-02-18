@@ -22,7 +22,7 @@ public:
 
 	void EnterFraction();
 
-	Fraction addFraction(Fraction a);
+	Fraction sumFraction(Fraction a);
 	Fraction subtrFraction(Fraction a);
 	Fraction multFraction(Fraction a);
 	Fraction divFraction(Fraction a);
@@ -32,7 +32,7 @@ public:
 
 	void ShowFraction() const {
 		if (numerator == 0) cout << "0" << endl;
-		cout << numerator << " / " << denomenator << endl;
+		else cout << numerator << " / " << denomenator << endl;
 	}
 	int getNUM() const{
 		return numerator;

@@ -36,7 +36,7 @@
 	a.EnterFraction();
 	a.ShowFraction();		//тест - дробь вводится и выводится
 
-	Fraction c = a.addFraction(b);	//проверка работы сложения
+	Fraction c = a.sumFraction(b);	//проверка работы сложения
 	a.ShowFraction();
 	cout << " + ";
 	b.ShowFraction();

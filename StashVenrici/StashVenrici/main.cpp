@@ -20,15 +20,17 @@ void main() {
 	/*Задание 1. В уже существующий класс “Дробь” добавьте перегрузку операторов
 		сложения, инкремента и декремента.*/
 
-	Fraction a, b;
+	Fraction a(2,5), b(2,5);
+	cout << "a = ";
 	a.ShowFraction();
+	cout << "b = ";
 	b.ShowFraction();
 	Fraction c, d;
 	cout << "\na + b = ";
 	c = a + b;	//работает перегрузка оператор+
 	c.ShowFraction();
 	d = a - b;
-	cout << "a - b = ";
+	cout << "a - b = "; //перегрузка оператора-
 	d.ShowFraction();
 
 
