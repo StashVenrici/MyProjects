@@ -23,6 +23,15 @@ void main() {
 	Fraction a, b;
 	a.ShowFraction();
 	b.ShowFraction();
+	Fraction c, d;
+	cout << "\na + b = ";
+	c = a + b;	//работает перегрузка оператор+
+	c.ShowFraction();
+	d = a - b;
+	cout << "a - b = ";
+	d.ShowFraction();
+
+
 
 	_getch();
 }

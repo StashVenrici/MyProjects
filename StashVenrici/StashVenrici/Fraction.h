@@ -26,9 +26,12 @@ public:
 	Fraction subtrFraction(Fraction a);
 	Fraction multFraction(Fraction a);
 	Fraction divFraction(Fraction a);
+	Fraction operator +(const Fraction a);
+	Fraction operator -(const Fraction a);
 
 
 	void ShowFraction() const {
+		if (numerator == 0) cout << "0" << endl;
 		cout << numerator << " / " << denomenator << endl;
 	}
 	int getNUM() const{

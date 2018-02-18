@@ -85,3 +85,15 @@ using namespace std;
 		}
 		return tmp;
 	}
+
+	Fraction Fraction::operator+(const Fraction a) {
+		Fraction tmp;
+		tmp = this->addFraction(a);
+		return tmp;
+	}
+
+	Fraction Fraction::operator-(const Fraction a) {
+		Fraction tmp;
+		tmp = this->subtrFraction(a);
+		return tmp;
+	}
