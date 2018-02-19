@@ -96,3 +96,24 @@ using namespace std;
 		tmp = this->subtrFraction(a);
 		return tmp;
 	}
+
+	Fraction& Fraction::operator ++() {
+		numerator += denomenator;
+		return *this;
+	}
+	Fraction& Fraction::operator --() {
+		numerator -= denomenator;
+		return *this;
+	}
+
+	Fraction& Fraction::operator ++(int k) {
+		Fraction tmp;
+		tmp.numerator = this->numerator + this->denomenator;
+		tmp.denomenator = this->denomenator;
+		this->numerator += this->denomenator;
+		return tmp;
+	}
+	Fraction& Fraction::operator --(int k) {
+		numerator -= denomenator;
+		return *this;
+	}

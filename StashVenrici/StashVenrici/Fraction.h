@@ -28,6 +28,10 @@ public:
 	Fraction divFraction(Fraction a);
 	Fraction operator +(const Fraction a);
 	Fraction operator -(const Fraction a);
+	Fraction& operator ++();
+	Fraction& operator --();
+	Fraction& operator ++(int);
+	Fraction& operator --(int);
 
 
 	void ShowFraction() const {

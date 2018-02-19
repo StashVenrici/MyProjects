@@ -33,7 +33,17 @@ void main() {
 	cout << "a - b = "; //перегрузка оператора-
 	d.ShowFraction();
 
+	/*++a;
+	cout << "++a = ";
+	a.ShowFraction();
 
+	--b;
+	cout << "--b = ";
+	b.ShowFraction();*/
+	cout << "\n========================\n";
+	int e, x=1, y = 1;
+	e = x + y++;
+	cout << e<<" , " << y;
 
 	_getch();
 }
