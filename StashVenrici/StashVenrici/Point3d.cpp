@@ -1,5 +1,6 @@
 #include <iostream>
 #include"Point3d.h"
+#include <cmath>
 
 using namespace std;
 
@@ -50,4 +51,33 @@ using namespace std;
 	
 	int Point3d::getz() const {
 		return z;
+	}
+
+	Point3d Point3d::operator+=(const Point3d a) {
+		x += a.x;
+		y += a.y;
+		z += a.z;
+		return *this;
+	}
+
+	Point3d Point3d::operator+=(const int a) {
+		x += a;
+		y += a;
+		z += a;
+		return *this;
+	}
+
+	bool Point3d::operator <(const Point3d p) {
+		return (sqrt(x*x + y*y + z*z) < sqrt(p.x*p.x + p.y*p.y + p.z*p.z));
+	}
+
+	bool Point3d::operator !=(const Point3d p) {
+		if (x == p.x && y == p.y && z == p.z)return false; else return true;
+	}
+
+	Point3d Point3d::operator-() {
+		x = -x;
+		y = -y;
+		z = -z;
+		return *this;
 	}

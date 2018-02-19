@@ -18,4 +18,12 @@ public:
 	int getx() const;
 	int gety() const;
 	int getz() const;
+
+	Point3d operator+=(const Point3d a);
+	Point3d operator+=(const int a);
+
+	bool operator <(const Point3d p);
+	bool operator !=(const Point3d p);
+
+	Point3d operator-();
 };
