@@ -35,7 +35,8 @@ public:
 
 
 	void ShowFraction() const {
-		if (numerator == 0) cout << "0" << endl;
+		if (numerator == denomenator) cout << numerator << endl;
+		else if (numerator == 0) cout << "0" << endl;
 		else cout << numerator << " / " << denomenator << endl;
 	}
 	int getNUM() const{

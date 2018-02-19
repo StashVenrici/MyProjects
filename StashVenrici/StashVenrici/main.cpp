@@ -32,18 +32,38 @@ void main() {
 	d = a - b;
 	cout << "a - b = "; //перегрузка оператора-
 	d.ShowFraction();
-
-	/*++a;
+	cout << "\n========================\n";
+	++a;
 	cout << "++a = ";
 	a.ShowFraction();
-
+	cout << "\n========================\n";
 	--b;
 	cout << "--b = ";
-	b.ShowFraction();*/
+	b.ShowFraction();
 	cout << "\n========================\n";
-	int e, x=1, y = 1;
-	e = x + y++;
-	cout << e<<" , " << y;
+	a.setFraction(1, 2);
+	b.setFraction(1, 2);
+	Fraction x;
+	x = a + b++;
+	cout << "setting a = b = 1/2"<< endl << "a + b++ = ";
+	x.ShowFraction();
+	cout << "b++ = ";
+	b.ShowFraction();
+
+	cout << "\n========================\n";
+	a.setFraction(1, 2);
+	b.setFraction(1, 2);
+	Fraction y;
+	y = a + b--;
+	cout << "setting a = b = 1/2" << endl << "a + b-- = ";
+	y.ShowFraction();
+	cout << "b-- = ";
+	b.ShowFraction();
+
+
+
+
+
 
 	_getch();
 }

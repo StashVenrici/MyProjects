@@ -108,12 +108,13 @@ using namespace std;
 
 	Fraction& Fraction::operator ++(int k) {
 		Fraction tmp;
-		tmp.numerator = this->numerator + this->denomenator;
-		tmp.denomenator = this->denomenator;
-		this->numerator += this->denomenator;
+		tmp = *this;
+		numerator += denomenator;
 		return tmp;
 	}
 	Fraction& Fraction::operator --(int k) {
+		Fraction tmp;
+		tmp = *this;
 		numerator -= denomenator;
-		return *this;
+		return tmp;
 	}
