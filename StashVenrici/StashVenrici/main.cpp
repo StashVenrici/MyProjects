@@ -6,6 +6,7 @@
 #include "Functions.h"
 #include "Fraction.h"
 #include "Student.h"
+#include "MyString.h"
 
 
 using namespace std;
@@ -64,39 +65,45 @@ void main() {
 	/*«адание 2. ¬ уже существующий класс У оординатаФ добавьте перегрузку операторов
 		сложение(+= ), операции <, != , унарный минус.*/
 
-	Point3d crdA(1,2,3), crdB(2,2,2);
-	cout << "point A: ";
-	crdA.ShowCoord();
-	cout << "point B: ";
-	crdB.ShowCoord();
-	cout << "point A + point B: ";
-	crdA += crdB;			//перегрузка оператора +=
-	crdA.ShowCoord();
-	cout << "point A + INT 10: ";
-	crdA += 10;				//перегрузка оператора +=INT
-	crdA.ShowCoord();
+	//Point3d crdA(1,2,3), crdB(2,2,2);
+	//cout << "point A: ";
+	//crdA.ShowCoord();
+	//cout << "point B: ";
+	//crdB.ShowCoord();
+	//cout << "point A + point B: ";
+	//crdA += crdB;			//перегрузка оператора +=
+	//crdA.ShowCoord();
+	//cout << "point A + INT 10: ";
+	//crdA += 10;				//перегрузка оператора +=INT
+	//crdA.ShowCoord();
 
-	cout << "\n========================\n";
-	if (crdA < crdB) cout << "A < B";	//перегрузка знака <
-	else cout << "A > B";
+	//cout << "\n========================\n";
+	//if (crdA < crdB) cout << "A < B";	//перегрузка знака <
+	//else cout << "A > B";
 
-	cout << "\n========================\n";
-	Point3d crdX(1, 2, 3), crdY(1, 2, 3), crdZ(3,2,1);
-	cout << "point X: ";
-	crdX.ShowCoord();
-	cout << "point Y: ";
-	crdY.ShowCoord();
-	cout << "point Z: ";
-	crdZ.ShowCoord();
-	if (crdX != crdY) cout << "X != Y"; else cout << "X = Y";
-	cout << endl;
-	if (crdX != crdZ) cout << "X != Z"; else cout << "X = Z";
+	//cout << "\n========================\n";
+	//Point3d crdX(1, 2, 3), crdY(1, 2, 3), crdZ(3,2,1);
+	//cout << "point X: ";
+	//crdX.ShowCoord();
+	//cout << "point Y: ";
+	//crdY.ShowCoord();
+	//cout << "point Z: ";
+	//crdZ.ShowCoord();
+	//if (crdX != crdY) cout << "X != Y"; else cout << "X = Y";
+	//cout << endl;
+	//if (crdX != crdZ) cout << "X != Z"; else cout << "X = Z";
 
-	cout << "\n========================\n";
-	-crdX;
-	cout << "-X = ";
-	crdX.ShowCoord();
+	//cout << "\n========================\n";
+	//-crdX;
+	//cout << "-X = ";
+	//crdX.ShowCoord();
 
+	/*«адание 3. ¬ уже существующий класс У—трокаФ добавьте перегрузку операторов
+		сложение с конкатенацией(+= ), операции >, <, == , != .ѕерегрузку осуществл€ть с
+		учетом содержимого строки.*/
+
+	MyString m;
+	m.show();
 
 
 

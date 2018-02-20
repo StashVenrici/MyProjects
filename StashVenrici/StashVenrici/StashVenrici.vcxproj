@@ -142,12 +142,14 @@
     <ClCompile Include="Fractions.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Point3d.cpp" />
     <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="MyString.h" />
     <ClInclude Include="Point3d.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>

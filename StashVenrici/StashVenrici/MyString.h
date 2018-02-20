@@ -1,0 +1,80 @@
+﻿
+#pragma once
+
+#include <iostream>
+using namespace std;
+
+class MyString
+{
+private:
+    char * str;                   // адрес строки
+    int len;                      // длина строки
+	//static int count;			  // количество созданных объектов
+	//int numb;					  // номер объекта при создании   // добавили на Уроке 3====================
+	
+public:
+	MyString();                     // конструктор по умолчанию
+	MyString(const char * s);       // конструктор преобразования 
+	explicit MyString(int a);		// конструктор преобразования    // explicit
+	MyString(const MyString & st);  // конструктор копий
+	
+	~MyString();                    // деструктор
+    int length() const { return len; }
+	void show();
+	// пререгрузка операций
+
+	MyString & operator=(const MyString & st); // опреация = для MyString = MyString
+	MyString & operator=(const char * s);      // опреация = для MyString = char *
+	MyString operator + (const MyString &s);
+
+	//======================================Урок 3===================================
+
+	operator char*(){ cout << "\n operator char *()\n";  return str; }           // Функция преобразования
+	void operator ()(const char * s);           //  перегрузка оператора () с одним параметром
+	
+	char &operator[](int);                    // операция [] 
+	const char &operator[](int) const;        // операция [] 
+	
+	
+	MyString(MyString && st);					// constructor copy  with Move 
+
+	friend ostream & operator<<(ostream & os, const MyString & st);
+
+
+	//===================================Урок 3 - не разбирали=======================
+	
+	MyString & operator=(MyString && st);     // Assignment with Move
+	friend istream & operator>>(istream & is, MyString & st);
+
+	//static int get_count(){ return count; }    // статическая функция
+	
+	
+	//int get_numb(){ return numb; }
+
+	
+	//static void func(int i, MyString *p = 0) {
+	//	//если хотя бы один объект есть
+	//	if (p)
+	//		p->numb = i;
+	//	//если объектов класса нет
+	//	else
+	//		count = i;
+	//}
+
+};
+
+
+
+
+//====================================================================================
+
+
+
+
+
+
+
+
+
+
+
