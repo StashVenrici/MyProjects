@@ -79,7 +79,7 @@ void MyString::show()
 //----------------------------Перегрузка операции = для MyString =  MyString ----------
 MyString & MyString::operator=(const MyString & st)
 {
-    cout << "\n operator =  \n";
+    //cout << "\n operator =  \n";
 	if (this == &st)
         return *this;
     delete [] str;
@@ -197,5 +197,36 @@ istream & operator>>(istream & is, MyString & st)
 }
 
 
+//-----------перегрузка оператора += ---------------------------
+
+MyString& MyString::operator +=(const MyString &p) {
+	
+	
+	MyString t;
+	t = *this;
+	this->len = t.len + p.len + 1;
+	this->str = new char[len];
+	strcpy_s(str, len, t);
+	strcat(str, p.str);
+	return *this;
+
+}
+bool MyString::operator>(const MyString &p) const {
+	if (strcmp(this->str, p.str) > 0) return true;
+	else return false;
+}
 
 
+bool MyString::operator<(const MyString &p) const {
+	if (strcmp(this->str, p.str) < 0) return true;
+	else return false;
+}
+
+bool MyString::operator==(const MyString &p) const {
+	if (strcmp(this->str, p.str) == 0) return true;
+	else return false;
+}
+bool MyString::operator!=(const MyString &p) const {
+	if (strcmp(this->str, p.str) != 0) return true;
+	else return false;
+}

@@ -102,9 +102,16 @@ void main() {
 		сложение с конкатенацией(+= ), операции >, <, == , != .Перегрузку осуществлять с
 		учетом содержимого строки.*/
 
-	MyString m;
-	m.show();
+	MyString A("Hello!"), B("World!");
+	A += B;		//перегрузка +=
+	A.show();
 
+	MyString X("Z"), Y("A"), Z("A");
+	if (X > Y) cout << "\nX>Y"; else cout << "X<Y";	//проверка operator>
+	if (Y < X) cout << "\nY<X"; else cout << "Y>X";	//проверка operator<
+	if (Y == Z) cout << "\nY=Z"; else cout << "Y!=Z";	//проверка operator==
+	if (Y != X) cout << "\nY!=X"; else cout << "Y=X";	//проверка operator!=
+	
 
 
 

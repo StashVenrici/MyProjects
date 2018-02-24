@@ -10,7 +10,7 @@ private:
     char * str;                   // адрес строки
     int len;                      // длина строки
 	//static int count;			  // количество созданных объектов
-	//int numb;					  // номер объекта при создании   // добавили на Уроке 3====================
+	//int numb;					  // номер объекта при создании
 	
 public:
 	MyString();                     // конструктор по умолчанию
@@ -27,9 +27,8 @@ public:
 	MyString & operator=(const char * s);      // опреация = для MyString = char *
 	MyString operator + (const MyString &s);
 
-	//======================================Урок 3===================================
 
-	operator char*(){ cout << "\n operator char *()\n";  return str; }           // Функция преобразования
+	operator char*(){ /*cout << "\n operator char *()\n"*/;  return str; }           // Функция преобразования
 	void operator ()(const char * s);           //  перегрузка оператора () с одним параметром
 	
 	char &operator[](int);                    // операция [] 
@@ -40,9 +39,6 @@ public:
 
 	friend ostream & operator<<(ostream & os, const MyString & st);
 
-
-	//===================================Урок 3 - не разбирали=======================
-	
 	MyString & operator=(MyString && st);     // Assignment with Move
 	friend istream & operator>>(istream & is, MyString & st);
 
@@ -60,6 +56,13 @@ public:
 	//	else
 	//		count = i;
 	//}
+
+	MyString &operator +=(const MyString &p);
+
+	bool operator>(const MyString &p) const;
+	bool operator<(const MyString &p) const;
+	bool operator==(const MyString &p) const;
+	bool operator!=(const MyString &p) const;
 
 };
 
