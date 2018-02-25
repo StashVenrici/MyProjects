@@ -2,11 +2,13 @@
 #include <conio.h>
 #include <windows.h>
 #include <iomanip>
+#include <string>
 #include "Point3d.h"
 #include "Functions.h"
 #include "Fraction.h"
 #include "Student.h"
 #include "MyString.h"
+#include"MyDate.h"
 
 
 using namespace std;
@@ -102,18 +104,28 @@ void main() {
 		сложение с конкатенацией(+= ), операции >, <, == , != .ѕерегрузку осуществл€ть с
 		учетом содержимого строки.*/
 
-	MyString A("Hello!"), B("World!");
-	A += B;		//перегрузка +=
-	A.show();
+	//MyString A("Hello!"), B("World!");
+	//A += B;		//перегрузка +=
+	//A.show();
 
-	MyString X("Z"), Y("A"), Z("A");
-	if (X > Y) cout << "\nX>Y"; else cout << "X<Y";	//проверка operator>
-	if (Y < X) cout << "\nY<X"; else cout << "Y>X";	//проверка operator<
-	if (Y == Z) cout << "\nY=Z"; else cout << "Y!=Z";	//проверка operator==
-	if (Y != X) cout << "\nY!=X"; else cout << "Y=X";	//проверка operator!=
+	//MyString X("Z"), Y("A"), Z("A");
+	//if (X > Y) cout << "\nX>Y"; else cout << "X<Y";	//проверка operator>
+	//if (Y < X) cout << "\nY<X"; else cout << "Y>X";	//проверка operator<
+	//if (Y == Z) cout << "\nY=Z"; else cout << "Y!=Z";	//проверка operator==
+	//if (Y != X) cout << "\nY!=X"; else cout << "Y=X";	//проверка operator!=
 	
+	/*«адание 4. –еализуйте класс УƒатаФ дл€ хранени€ календарной даты.ќрганизуйте
+	возможность создани€ объекта по умолчанию, на основе дн€, мес€ца, года(целые
+	числа) и строки с разделителем(например У25 / 11 / 2017Ф или У25.11.2017Ф. Ќапишите
+	одну функцию дл€ вывода данных формате : Ќо€брь, 25, 2017.*/
 
 
+	MyDate d1(2, 11, 2003);
+	d1.Show();
+
+	string date2 = "25/11/2017";		//не выдержал, использовал класс string вместо надоевшего костыл€ char*
+	MyDate d2(date2);
+	d2.Show();
 
 	_getch();
 }
