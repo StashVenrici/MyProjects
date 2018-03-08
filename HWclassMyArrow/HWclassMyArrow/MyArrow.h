@@ -15,14 +15,9 @@ public:
 	MyArrow operator=(const MyArrow &A);
 	int & operator[](int a);
 	~MyArrow();
+	double calcAVG();
 
 	friend ostream & operator<<(ostream & os, const MyArrow & A);
-	//{
-	//	for (int i = 0; i < A.SIZE; i++) os << A.arr[i]<< " ";
-	//	return os;
-	//}
-	//непонятно почему, но внутри MyArrow.cpp функция ostream не видит полей класса
-	//поэтому написал реализацию здесь, потом попробую разобраться
 
 	friend void foo(MyArrow);
 

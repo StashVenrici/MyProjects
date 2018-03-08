@@ -66,3 +66,10 @@ MyArrow::~MyArrow()
 	//_getch();
 	delete[] arr;
 }
+
+double MyArrow::calcAVG()
+{
+	int sum = 0;
+	for (int i = 0; i < SIZE; i++) sum += arr[i];
+	return ((sum / (double)SIZE));
+}
