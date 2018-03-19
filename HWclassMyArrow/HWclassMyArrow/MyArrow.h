@@ -16,11 +16,13 @@ public:
 	MyArrow &operator=(const MyArrow &A);
 	MyArrow &operator=(MyArrow &&A);	// оператор MOVE
 	int & operator[](int a);
+	MyArrow operator+(const int a) const;
+	
 	~MyArrow();
 	double calcAVG();
 	
 	friend ostream & operator<<(ostream & os, const MyArrow & A);
-
+	friend istream & operator>>(istream & is, const MyArrow & A);
 	friend void foo(MyArrow);
 
 

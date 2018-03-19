@@ -22,10 +22,9 @@ MyArrow::MyArrow()
 MyArrow::MyArrow(int sz)
 {
 	count++;
-	//srand(time(NULL));
 	SIZE = sz;
 	arr = new int[SIZE];
-	for (int i = 0; i < SIZE; i++) arr[i] = rand()%100;
+	for (int i = 0; i < SIZE; i++) arr[i] = 0;
 }
 
 MyArrow::MyArrow(const MyArrow &A)
@@ -80,6 +79,14 @@ int & MyArrow::operator[](int a)
 {
 	assert(a >= 0 && a < SIZE);
 	return this->arr[a];
+}
+
+MyArrow MyArrow::operator+(const int a) const
+{
+	MyArrow TMP(SIZE+1);
+	for (int i = 0; i < SIZE; i++) TMP.arr[i] = arr[i];
+	TMP.arr[SIZE] = a;
+	return TMP;
 }
 
 MyArrow::~MyArrow()
