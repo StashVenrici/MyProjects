@@ -81,11 +81,12 @@ int & MyArrow::operator[](int a)
 	return this->arr[a];
 }
 
-MyArrow MyArrow::operator+(const int a) const
+MyArrow MyArrow::operator+(const int a)
 {
 	MyArrow TMP(SIZE+1);
 	for (int i = 0; i < SIZE; i++) TMP.arr[i] = arr[i];
 	TMP.arr[SIZE] = a;
+	TMP.SIZE = SIZE + 1;
 	return TMP;
 }
 
@@ -101,4 +102,29 @@ double MyArrow::calcAVG()
 	int sum = 0;
 	for (int i = 0; i < SIZE; i++) sum += arr[i];
 	return ((sum / (double)SIZE));
+}
+
+MyArrow operator+(int a, const MyArrow & A)
+{
+	MyArrow TMP(A.SIZE + 1);
+	TMP.arr[0] = a;
+	for (int i = 1; i < A.SIZE+1; i++) TMP.arr[i] = A.arr[i-1];
+	return TMP;
+}
+
+MyArrow MyArrow::operator+(const MyArrow &A)
+{
+	MyArrow TMP(this->SIZE + A.SIZE);
+	TMP.SIZE = this->SIZE + A.SIZE;
+	int i;
+	for (i = 0; i < this->SIZE; i++)
+	{
+		TMP.arr[i] = this->arr[i];
+	}
+	for (int j = 0; j < A.SIZE; j++)
+	{
+		TMP.arr[i] = A.arr[j];
+		i++;
+	}
+	return TMP;
 }

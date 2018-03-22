@@ -16,7 +16,8 @@ public:
 	MyArrow &operator=(const MyArrow &A);
 	MyArrow &operator=(MyArrow &&A);	// оператор MOVE
 	int & operator[](int a);
-	MyArrow operator+(const int a) const;
+	MyArrow operator+(const int a);
+	MyArrow operator+(const MyArrow &A);
 	
 	~MyArrow();
 	double calcAVG();
@@ -24,6 +25,8 @@ public:
 	friend ostream & operator<<(ostream & os, const MyArrow & A);
 	friend istream & operator>>(istream & is, const MyArrow & A);
 	friend void foo(MyArrow);
+
+	friend MyArrow operator+(int a, const MyArrow & A);		//перегрузка int+MyArrow;
 
 
 };
