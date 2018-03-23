@@ -21,9 +21,15 @@
     <ClCompile Include="MyArrow.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyArrow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
