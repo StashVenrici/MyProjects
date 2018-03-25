@@ -38,6 +38,16 @@ int List::GetCount()
 }
 
 //--------------------------------------------------
+
+void List::AddBegin(char data)
+{
+	Element *t = new Element;
+	t->data = data;
+	t->Next = Head;
+	Head = t;
+}
+
+
 void List::AddEnd(char data)
 {
 	Element * temp = new Element;		//создание нового элемента
