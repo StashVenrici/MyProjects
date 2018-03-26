@@ -20,6 +20,8 @@ public:
 	void DelAll();			//Удаление всего списка
 	void Print();			//Вывод содержимого списка(с головы)
 	int GetCount();//Получение количества элементов,//находящихся в списке
+	int FindElement(const char d);
+	void FindDel(const char d);
 
 	// Добавление элемента(второй параметр) после элемента со значением первого параметра
 	void AddAfter(char d, char dd); 

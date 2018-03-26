@@ -124,3 +124,45 @@ void List::AddAfter(char d, char dd)
 	count++;
 }
 
+int List::FindElement(const char d)
+{
+	Element * temp = Head;
+	int counter = 0;
+		while (temp != nullptr)
+		{
+			if (temp->data == d) return counter;
+			else 
+			{
+				counter++;
+				temp = temp->Next;
+			}
+		}
+	
+	return -1;
+}
+
+void List::FindDel(const char d)
+{
+	Element * temp = Head;
+	if (temp->data == d) DelBegin();
+	else
+	{
+	Element * tnext = temp->Next;
+
+		while (tnext != nullptr)
+		{
+			if (tnext->data == d)
+			{
+				temp->Next = tnext->Next;
+				delete tnext;
+				break;
+			}
+			else
+			{
+				temp = tnext;
+				tnext = tnext->Next;
+			}
+		}
+	}
+}
+
