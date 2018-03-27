@@ -8,8 +8,24 @@ using namespace std;
 //--------------------------------------------------
 List::List()
 {
-	Head =  NULL;
+	Head =  nullptr;
 	count = 0;
+}
+
+//--------------------------------------------------конструктор копий
+List::List(const List & L)
+{
+	Head = nullptr;
+	Element *temp = L.Head;		//создаем указатель на Head донора
+	if (temp == nullptr) Head = nullptr;		//на случай, если донор-список пустой
+	else
+	{
+		while (temp != nullptr)
+		{
+			this->AddEnd(L.Head->data);
+			temp = temp->Next;
+		}
+	}
 }
 
 //--------------------------------------------------
@@ -26,8 +42,6 @@ List::~List()
 		e = t;
 	}
 	Head = 0;
-		
-	//DelAll();
 }
 
 //--------------------------------------------------

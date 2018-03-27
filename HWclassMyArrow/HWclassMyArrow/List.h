@@ -13,6 +13,7 @@ class List
 	int count;				//Количество элементов списка
 public:
 	List();					//Конструктор
+	List(const List &L);	//конструктор копий
 	~List();				//Деструктор
 	void AddBegin(char d);		//добавление элемента в начало списка
 	void AddEnd(char d);	//Добавление элемента в список(в конец)
