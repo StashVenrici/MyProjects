@@ -17,15 +17,12 @@ List::List(const List & L)
 {
 	Head = nullptr;
 	Element *temp = L.Head;		//создаем указатель на Head донора
-	if (temp == nullptr) Head = nullptr;		//на случай, если донор-список пустой
-	else
-	{
+	if (temp != nullptr) 
 		while (temp != nullptr)
 		{
-			this->AddEnd(L.Head->data);
+			this->AddEnd(temp->data);
 			temp = temp->Next;
 		}
-	}
 }
 
 //--------------------------------------------------
@@ -180,3 +177,23 @@ void List::FindDel(const char d)
 	}
 }
 
+List & List::operator=(List & L)
+{
+	if (this == &L)
+		return *this;
+
+	DelAll();					//очищаем
+	Element *temp = L.Head;		//создаем указатель на Head донора
+	if (temp == nullptr) return *this;		//на случай, если донор-список пустой
+	else
+	{
+		while (temp != nullptr)
+		{
+			this->AddEnd(temp->data);
+			temp = temp->Next;
+		}
+	}
+
+
+	return *this;
+}

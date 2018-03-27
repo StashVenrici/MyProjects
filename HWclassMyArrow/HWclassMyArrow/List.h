@@ -26,7 +26,11 @@ public:
 
 	// Добавление элемента(второй параметр) после элемента со значением первого параметра
 	void AddAfter(char d, char dd); 
-	
+
+	List& operator=(List &L);
+
+
+	friend void f1(List L);
 };
 
 

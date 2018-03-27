@@ -12,6 +12,7 @@ void foo(MyArrow A) {
 
 void f1(List L) {
 	cout << "скопировано...";
+	L.Print();
 }
 
 ostream & operator<<(ostream & os, const MyArrow & A)
@@ -128,7 +129,7 @@ int main(){
 		- добавление элемента в конец списка    *
 		- удаление элемента по значению			*
 		- конструктор копий						*
-		- оператор присваивания
+		- оператор присваивания					*
 		- оператор присваивания переноса
 		- оператор сложения двух списков.*/
 
@@ -161,7 +162,12 @@ int main(){
 	cout << "\nfind and delete \'!\':  ";
 	lst.Print();
 
-	f1(lst);
+	f1(lst);		//проверка оператора копирования
+
+	cout << "\nработает operator = :\n";
+	List lst_copy;
+	lst_copy = lst;
+	lst_copy.Print();
 
 
 
