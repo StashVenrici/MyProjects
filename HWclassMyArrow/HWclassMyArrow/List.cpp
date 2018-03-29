@@ -184,7 +184,7 @@ List & List::operator=(List & L)
 
 	DelAll();					//очищаем
 	Element *temp = L.Head;		//создаем указатель на Head донора
-	if (temp == nullptr) return *this;		//на случай, если донор-список пустой
+	if (temp == nullptr) return *this;		//на случай, если список-донор пустой
 	else
 	{
 		while (temp != nullptr)
@@ -196,4 +196,47 @@ List & List::operator=(List & L)
 
 
 	return *this;
+}
+
+//=====оператор присваивания с перемещением=====
+List & List::operator=(List && L)
+{
+	DelAll();					//очищаем
+	Element *temp = L.Head;		//создаем указатель на Head донора
+	Head = nullptr;				//создаем пустой объект
+	if (temp == nullptr) return *this;		//на случай, если список-донор пустой
+	else
+	{
+		while (temp != nullptr)
+		{
+			this->AddEnd(temp->data);
+			temp = temp->Next;
+		}
+	}
+	L.DelAll();				//очищаем донор
+}
+
+List List::operator+(const List & L)
+{
+	List tmp;
+	Element *temp = this->Head;
+	if (temp != nullptr)		//копируем первый список
+	{
+		while (temp->Next != nullptr)		//ВНИМАНИЕ! здесь цикл срабатывает до предпоследнего элемента списка
+		{									//это нужно, чтобы не скопировался "\n"
+			tmp.AddEnd(temp->data);
+			temp = temp->Next;
+		}
+	}
+	temp = L.Head;
+	if (temp != nullptr)		//копируем второй список
+	{
+		while (temp != nullptr)
+		{
+			tmp.AddEnd(temp->data);
+			temp = temp->Next;
+		}
+	}
+
+	return tmp;
 }

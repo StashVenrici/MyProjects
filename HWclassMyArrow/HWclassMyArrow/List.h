@@ -28,6 +28,9 @@ public:
 	void AddAfter(char d, char dd); 
 
 	List& operator=(List &L);
+	List& operator=(List &&L);
+	List operator+(const List &L);
+
 
 
 	friend void f1(List L);
