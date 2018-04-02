@@ -47,20 +47,20 @@ int main(){
 	/*HW4 «адание 2. ƒобавить в уже существующий класс MyArray конструктор переноса,
 		оператор присваивани€ переноса.*/
 
-	//MyArrow A(5);
-	//cout << "A: ";
-	//A.Show();
-	//MyArrow B(A);	//работает конструктор переноса, строка 14 в MyArrow.h
-	//cout << "B: ";
-	//B.Show();
-	//cout << "=====================================\n";
-	//MyArrow C, D(7);
-	//C = CreateMyArrow(A);	//после создани€ объекта срабатывает оператор присваивани€ переноса, строка 17 в MyArrow.h
-	//cout << "C(A)";
-	//C.Show();
-	//A = D;		//а здесь срабатывает обычный оператор присваивани€
-	//cout << "A=D: ";
-	//A.Show();
+	MyArrow A(5);
+	cout << "A: ";
+	A.Show();
+	MyArrow B(A);	//работает конструктор переноса, строка 14 в MyArrow.h
+	cout << "B: ";
+	B.Show();
+	cout << "=====================================\n";
+	MyArrow C, D(7);
+	C = CreateMyArrow(A);	//после создани€ объекта срабатывает оператор присваивани€ переноса, строка 17 в MyArrow.h
+	cout << "C(A)";
+	C.Show();
+	A = D;		//а здесь срабатывает обычный оператор присваивани€
+	cout << "A=D: ";
+	A.Show();
 
 
 
@@ -103,46 +103,46 @@ int main(){
 		- оператор сложени€ двух списков.*/		
 
 		//—оздаем объект класса
-	List lst;
-	//“естова€ строка
-	char s[] = "Hello, World !!!\n";
-	//¬ыводим строку
-	cout << s << "\n\n";
-	//ќпредел€ем длину строки
-	int len = strlen(s);
-	//«агон€ем строку в список
-	for (int i = 0; i < len; i++)
-		lst.AddEnd(s[i]);
-	//–аспечатываем содержимое списка
-	lst.Print();
-	//”дал€ем три элемента списка
-	lst.DelBegin();
-	lst.DelBegin();
-	lst.DelBegin();
-	//добавл€ем в начало элемент
-	lst.AddBegin('A');
-	//–аспечатываем содержимое списка
-	lst.Print();
-	//поиск элемента по содержимому
-	cout << "\nfind W: " << lst.FindElement('W');
-	//удаление элемента по значению
-	lst.FindDel('!');
-	lst.FindDel('!');
-	cout << "\nfind and delete \'!\':  ";
-	lst.Print();
+	//List lst;
+	////“естова€ строка
+	//char s[] = "Hello, World !!!\n";
+	////¬ыводим строку
+	//cout << s << "\n\n";
+	////ќпредел€ем длину строки
+	//int len = strlen(s);
+	////«агон€ем строку в список
+	//for (int i = 0; i < len; i++)
+	//	lst.AddEnd(s[i]);
+	////–аспечатываем содержимое списка
+	//lst.Print();
+	////”дал€ем три элемента списка
+	//lst.DelBegin();
+	//lst.DelBegin();
+	//lst.DelBegin();
+	////добавл€ем в начало элемент
+	//lst.AddBegin('A');
+	////–аспечатываем содержимое списка
+	//lst.Print();
+	////поиск элемента по содержимому
+	//cout << "\nfind W: " << lst.FindElement('W');
+	////удаление элемента по значению
+	//lst.FindDel('!');
+	//lst.FindDel('!');
+	//cout << "\nfind and delete \'!\':  ";
+	//lst.Print();
 
-	f1(lst);		//проверка оператора копировани€
+	//f1(lst);		//проверка оператора копировани€
 
-	cout << "\nработает operator = :\n";
-	List lst_copy;
-	lst_copy = lst;
-	lst_copy.Print();
+	//cout << "\nработает operator = :\n";
+	//List lst_copy;
+	//lst_copy = lst;
+	//lst_copy.Print();
 
-	//провер€ем оператор= переноса и сложение 2х списков
-	List sum_lst;
-	sum_lst = lst + lst_copy;
-	cout << "\nSUM: ";
-	sum_lst.Print();
+	////провер€ем оператор= переноса и сложение 2х списков
+	//List sum_lst;
+	//sum_lst = lst + lst_copy;
+	//cout << "\nSUM: ";
+	//sum_lst.Print();
 
 
 

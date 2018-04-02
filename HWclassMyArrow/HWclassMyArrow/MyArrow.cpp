@@ -11,6 +11,7 @@ using namespace std;
 
 int MyArrow::count = 0;
 
+//создание объекта класса размера 1
 MyArrow::MyArrow()
 {
 	count++;
@@ -19,6 +20,7 @@ MyArrow::MyArrow()
 	arr[0] = 0;
 }
 
+//создание обхекта класса заданного размера
 MyArrow::MyArrow(int sz)
 {
 	count++;
@@ -27,6 +29,7 @@ MyArrow::MyArrow(int sz)
 	for (int i = 0; i < SIZE; i++) arr[i] = 0;
 }
 
+//конструктор копирования
 MyArrow::MyArrow(const MyArrow &A)
 {
 	count++;
@@ -35,6 +38,7 @@ MyArrow::MyArrow(const MyArrow &A)
 	for (int i = 0; i < SIZE; i++) arr[i] = A.arr[i];
 }
 
+//конструктор копирования MOVE
 MyArrow::MyArrow(MyArrow&&A)
 {
 	count++;
@@ -45,12 +49,14 @@ MyArrow::MyArrow(MyArrow&&A)
 	A.arr = nullptr;
 }
 
+//метод Show
 void MyArrow::Show()
 {
 	for (int i = 0; i < SIZE; i++) cout << arr[i] <<" ";
 	cout << endl;
 }
 
+//перегрузка оператора =
 MyArrow &MyArrow::operator=(const MyArrow &A)
 {
 	if (this == &A)
@@ -62,14 +68,14 @@ MyArrow &MyArrow::operator=(const MyArrow &A)
 	return *this;
 }
 
+//перегрузка оператора =
 MyArrow &MyArrow::operator=(MyArrow &&A)
 {
 	if (this == &A)
 		return *this;
 	delete[]arr;
 	SIZE = A.SIZE;
-	arr = new int[SIZE];
-	for (int i = 0; i < SIZE; i++) arr[i] = A.arr[i];
+	arr = A.arr;
 	A.SIZE = 0;
 	A.arr = nullptr;
 	return *this;
