@@ -43,8 +43,7 @@ MyArrow::MyArrow(MyArrow&&A)
 {
 	count++;
 	SIZE = A.SIZE;
-	arr = new int[SIZE];
-	for (int i = 0; i < SIZE; i++) arr[i] = A.arr[i];
+	arr = A.arr;
 	A.SIZE = 0;
 	A.arr = nullptr;
 }
