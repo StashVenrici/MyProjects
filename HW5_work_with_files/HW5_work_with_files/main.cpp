@@ -30,6 +30,9 @@ int main()
 	//CompareFiles("test1.txt", "test2.txt");
 
 
+	/*Задание 3. Дан текстовый файл.Найти длину самой длинной строки.*/
+
+	//cout << "Max = " << MaxFileString("test_length.txt");
 	
 
 

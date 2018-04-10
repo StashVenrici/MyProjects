@@ -90,3 +90,20 @@ void CompareFiles(const string txt_1, const string txt_2)
 	fin1.close();
 	fin2.close();
 }
+
+
+int MaxFileString(const string txt_file)
+{
+	string currentstr ;
+	ifstream fin;
+	fin.open(txt_file);
+	int max = 0;
+	while (!fin.eof())
+	{
+		getline(fin, currentstr);
+		if (max < currentstr.length()) max = currentstr.length();
+	}
+
+	fin.close();
+	return max;
+}
