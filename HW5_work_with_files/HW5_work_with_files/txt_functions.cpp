@@ -98,13 +98,22 @@ int MaxFileString(const string txt_file)
 	ifstream fin;
 	fin.open(txt_file);
 	int max = 0;
-	while (!fin.eof())
+	
+	
+	if (!fin.is_open())
 	{
-		getline(fin, currentstr);
-		if (max < currentstr.length()) max = currentstr.length();
+		cout << "Îøèáêà !\n";
 	}
+	else
+	{
+		while (!fin.eof())
+		{
+			getline(fin, currentstr);
+			if (max < currentstr.length()) max = currentstr.length();
+		}
 
-	fin.close();
+		fin.close();
+	}
 	return max;
 }
 
@@ -114,16 +123,21 @@ int FindStr(const string txt_file, const string word)
 	string currentstr;
 	ifstream fin;
 	fin.open(txt_file);
-	while (!fin.eof())
+
+	if (!fin.is_open())
 	{
-		currentstr = "";
-		fin >> currentstr;
-		if (currentstr.find(word) != string::npos) rez++;
+		cout << "Îøèáêà !\n";
 	}
-	fin.close();
-
-
-
+	else
+	{
+		while (!fin.eof())
+		{
+			currentstr = "";
+			fin >> currentstr;
+			if (currentstr.find(word) != string::npos) rez++;
+		}
+		fin.close();
+	}
 
 	return rez;
 }
