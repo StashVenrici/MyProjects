@@ -107,3 +107,23 @@ int MaxFileString(const string txt_file)
 	fin.close();
 	return max;
 }
+
+int FindStr(const string txt_file, const string word)
+{
+	int rez=0;
+	string currentstr;
+	ifstream fin;
+	fin.open(txt_file);
+	while (!fin.eof())
+	{
+		currentstr = "";
+		fin >> currentstr;
+		if (currentstr.find(word) != string::npos) rez++;
+	}
+	fin.close();
+
+
+
+
+	return rez;
+}
