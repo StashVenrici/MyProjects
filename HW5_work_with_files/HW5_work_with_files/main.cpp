@@ -1,9 +1,10 @@
 #include<iostream>
 #include<conio.h>
-#include<fstream>
 #include<cctype>
 #include<string>
+#include<fstream>
 #include"txt_functions.h"
+#include"SimpleFM.h"
 
 using namespace std;
 
@@ -49,19 +50,26 @@ int main()
 	4. Перемещение файла из текущего каталога в указанный пользователем каталог;
 	5. Вывод содержимого указанного пользователем файла из текущего каталога на экран.*/
 
-	int selector;
-	cout << "Введите команду: "
+	int selector=0;
+	cout << "Выберите действие: "
 		<< "\n1. Создание нового файла в текущем каталоге;"
 		<< "\n2. Удаление файла из текущего каталога;"
 		<< "\n3. Переименование файла в текущем каталоге;"
 		<< "\n4. Перемещение файла из текущего каталога в указанный пользователем каталог;"
-		<< "\n5. Вывод содержимого указанного пользователем файла из текущего каталога на экран.";
+		<< "\n5. Вывод содержимого указанного пользователем файла из текущего каталога на экран.\n";
 
-
+	cin >> selector;
 	switch (selector)
 	{
-	case 1:
+	case 1: CreateFM();
 		break;
+	case 2: DeleteFM();
+		break;
+	case 3: RenameFM();
+		break;
+	case 4: MoveFM();
+		break;
+	case 5: ReadFM();
 	default:
 		break;
 	}

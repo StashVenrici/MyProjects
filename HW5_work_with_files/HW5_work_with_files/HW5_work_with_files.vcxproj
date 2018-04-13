@@ -116,9 +116,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimpleFM.cpp" />
     <ClCompile Include="txt_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SimpleFM.h" />
     <ClInclude Include="txt_functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

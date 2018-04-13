@@ -21,9 +21,15 @@
     <ClCompile Include="txt_functions.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleFM.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="txt_functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleFM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
