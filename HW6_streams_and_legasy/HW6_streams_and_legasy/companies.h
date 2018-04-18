@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class company
+class companies
 {
 	string company_name;
 	string owner;
@@ -12,13 +12,14 @@ class company
 	string address;
 	string occupation;
 public:
-	company(
+	companies(
 	string cn,
 	string ow,
 	string pn,
 	string ad,
 	string oc
 	);
-	~company();
+	void Show();
+	~companies();
 };
 
