@@ -20,7 +20,7 @@ public:
 	string oc
 	);
 	void Show();
-	void PushRecord(string path = "myBase.cdb");
+	friend void PushRecord(companies cagent, string path = "myBase.cdb");
 	void ReadAllRecords(string path = "myBase.cdb");
 	~companies();
 };
