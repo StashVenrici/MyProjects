@@ -1,5 +1,6 @@
 #include<iostream>
 #include<conio.h>
+#include<fstream>
 #include"companies.h"
 
 using namespace std;
@@ -26,12 +27,14 @@ int main()
 	string datafile = "myBase.cdb";  //файл с данными по умолчанию
 
 	//пример экземпляра класса
-		companies exm("Компания1", "Влад", "22-22-32", "Московская обл, пос. Куцкин", "Жывотноводчество");
+		companies exm("Компания", "Влад", "22-22-32", "Московская обл, пос. Куцкин", "Жывотноводчество");
 	//exm.Show();
+		companies ag;
 
 
-	exm.PushRecord();
-	exm.ReadAllRecords();
+	PushRecord(exm,datafile);
+	ReadAllRecords(datafile);
+	
 
 
 
@@ -41,3 +44,4 @@ int main()
 	_getch();
 	return 0;
 }
+

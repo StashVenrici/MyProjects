@@ -12,6 +12,7 @@ class companies
 	string address;
 	string occupation;
 public:
+	companies();
 	companies(
 	string cn,
 	string ow,
@@ -20,8 +21,8 @@ public:
 	string oc
 	);
 	void Show();
-	friend void PushRecord(companies cagent, string path = "myBase.cdb");
-	void ReadAllRecords(string path = "myBase.cdb");
 	~companies();
+	friend void PushRecord(companies cagent, string path);
+	friend void ReadAllRecords(string path);
 };
 

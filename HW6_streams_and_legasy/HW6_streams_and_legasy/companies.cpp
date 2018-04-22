@@ -2,14 +2,18 @@
 #include <string>
 #include<fstream>
 
+companies::companies()
+{
+	company_name = "";
+	owner = "";
+	phone_number = "";
+	address = "";
+	occupation = "";
+}
 
-companies::companies(
-	string cn = "",
-	string ow = "",
-	string pn = "",
-	string ad = "",
-	string oc = ""
-)
+
+
+companies::companies(string cn, string ow, string pn, string ad, string oc)
 {
 	company_name = cn;
 	owner = ow;
@@ -26,6 +30,11 @@ void companies::Show()
 		<< "\nТелефон: " << phone_number
 		<< "\nАдрес: " << address
 		<< "\nРод деятельности: " << occupation << endl;
+}
+
+
+companies::~companies()
+{
 }
 
 void PushRecord(companies agent, string path)
@@ -59,25 +68,35 @@ void PushRecord(companies agent, string path)
 	fout.close();
 }
 
-void companies::ReadAllRecords(string path)
+void ReadAllRecords(string path)
 {
-	//как не использовать при чтении из файла какой-то конкретный объект класса?
-	// сделать френд?
-
 	ifstream fin;
 	companies agent;
 	fin.open(path, ifstream::app | ifstream::binary);
 	if (!fin.is_open()) cout << "Ошибка открытия файла данных!";
 	else
 	{
-		while (fin.read((char*)&agent, sizeof(companies)))
+		while (!fin.eof())
 		{
+			int size;
+			fin.read((char*)&size, sizeof(int));
+			fin.read((char*)agent.company_name.c_str(), size);
+
+			fin.read((char*)&size, sizeof(int));
+			fin.read((char*)agent.owner.c_str(), size);
+
+			fin.read((char*)&size, sizeof(int));
+			fin.read((char*)agent.phone_number.c_str(), size);
+
+			fin.read((char*)&size, sizeof(int));
+			fin.read((char*)agent.address.c_str(), size);
+
+			fin.read((char*)&size, sizeof(int));
+			fin.read((char*)agent.occupation.c_str(), size);
+
 			agent.Show();
 		}
 	}
 	fin.close();
 }
 
-companies::~companies()
-{
-}
