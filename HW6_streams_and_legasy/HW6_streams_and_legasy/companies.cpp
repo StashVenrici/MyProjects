@@ -77,10 +77,9 @@ void companies::ReadAllRecords(const string path)
 	if (!fin.is_open()) cout << "Ошибка открытия файла данных!";
 	else
 	{
-		while (!fin.eof())
+		size_t size;
+		while (fin.read((char*)&size, sizeof(size_t)))
 		{
-			size_t size;
-			fin.read((char*)&size, sizeof(size_t));
 			buf = new char[size];
 			fin.read(buf, size);
 			agent.company_name = buf;
