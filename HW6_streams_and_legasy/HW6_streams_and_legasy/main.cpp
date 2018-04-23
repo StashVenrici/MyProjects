@@ -27,13 +27,12 @@ int main()
 	string datafile = "myBase.cdb";  //файл с данными по умолчанию
 
 	//пример экземпляра класса
-		companies exm("Компания", "Влад", "22-22-32", "Московская обл, пос. Куцкин", "Жывотноводчество");
+		companies exm("Компания1", "Влад2", "22-22-32-3", "Московская обл, пос. Куцкин 4", "Жывотноводчество 5");
+
+	exm.PushRecord(datafile);
 	//exm.Show();
-		companies ag;
-
-
-	PushRecord(exm,datafile);
-	ReadAllRecords(datafile);
+	exm.ReadAllRecords(datafile);
+	
 	
 
 

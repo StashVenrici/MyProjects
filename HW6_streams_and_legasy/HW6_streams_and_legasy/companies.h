@@ -11,6 +11,7 @@ class companies
 	string phone_number;
 	string address;
 	string occupation;
+	static int count;
 public:
 	companies();
 	companies(
@@ -22,7 +23,7 @@ public:
 	);
 	void Show();
 	~companies();
-	friend void PushRecord(companies cagent, string path);
-	friend void ReadAllRecords(string path);
+	void PushRecord(const string path);
+	void ReadAllRecords(const string path);
 };
 

@@ -29,7 +29,7 @@ void companies::Show()
 		<< "\nВладелец: " << owner
 		<< "\nТелефон: " << phone_number
 		<< "\nАдрес: " << address
-		<< "\nРод деятельности: " << occupation << endl;
+		<< "\nРод деятельности: " << occupation << endl << endl;
 }
 
 
@@ -37,7 +37,7 @@ companies::~companies()
 {
 }
 
-void PushRecord(companies agent, string path)
+void companies::PushRecord(const string path)
 {
 	ofstream fout;
 	fout.open(path, ofstream::app | ofstream::binary);
@@ -45,31 +45,32 @@ void PushRecord(companies agent, string path)
 	else
 	{
 		int size;
-		size = agent.company_name.length()+1;
+		size = this->company_name.length()+1;
 		fout.write((char*)&size, sizeof(int));
-		fout.write(agent.company_name.c_str(), size);
+		fout.write((char*)company_name.c_str(), size);
 		
-		size = agent.owner.length() + 1;
+		size = this->owner.length() + 1;
 		fout.write((char*)&size, sizeof(int));
-		fout.write(agent.owner.c_str(), size);
+		fout.write((char*)owner.c_str(), size);
 
-		size = agent.phone_number.length() + 1;
+		size = this->phone_number.length() + 1;
 		fout.write((char*)&size, sizeof(int));
-		fout.write(agent.phone_number.c_str(), size);
+		fout.write((char*)phone_number.c_str(), size);
 
-		size = agent.address.length() + 1;
+		size = this->address.length() + 1;
 		fout.write((char*)&size, sizeof(int));
-		fout.write(agent.address.c_str(), size);
+		fout.write((char*)address.c_str(), size);
 
-		size = agent.occupation.length() + 1;
+		size = this->occupation.length() + 1;
 		fout.write((char*)&size, sizeof(int));
-		fout.write(agent.occupation.c_str(), size);
+		fout.write((char*)occupation.c_str(), size);
 	}
 	fout.close();
 }
 
-void ReadAllRecords(string path)
+void companies::ReadAllRecords(const string path)
 {
+	char* buf;
 	ifstream fin;
 	companies agent;
 	fin.open(path, ifstream::app | ifstream::binary);
@@ -78,25 +79,39 @@ void ReadAllRecords(string path)
 	{
 		while (!fin.eof())
 		{
-			int size;
-			fin.read((char*)&size, sizeof(int));
-			fin.read((char*)agent.company_name.c_str(), size);
+			size_t size;
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.company_name = buf;
+			delete[]buf;
 
-			fin.read((char*)&size, sizeof(int));
-			fin.read((char*)agent.owner.c_str(), size);
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.owner = buf;
+			delete[]buf;
 
-			fin.read((char*)&size, sizeof(int));
-			fin.read((char*)agent.phone_number.c_str(), size);
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.phone_number = buf;
+			delete[]buf;
 
-			fin.read((char*)&size, sizeof(int));
-			fin.read((char*)agent.address.c_str(), size);
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.address = buf;
+			delete[]buf;
 
-			fin.read((char*)&size, sizeof(int));
-			fin.read((char*)agent.occupation.c_str(), size);
-
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.occupation = buf;
+			delete[]buf;
+			
 			agent.Show();
 		}
 	}
 	fin.close();
 }
-
