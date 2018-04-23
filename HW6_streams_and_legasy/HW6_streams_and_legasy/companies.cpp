@@ -73,7 +73,7 @@ void companies::ReadAllRecords(const string path)
 	char* buf;
 	ifstream fin;
 	companies agent;
-	fin.open(path, ifstream::app | ifstream::binary);
+	fin.open(path, ifstream::binary);
 	if (!fin.is_open()) cout << "Ошибка открытия файла данных!";
 	else
 	{
@@ -110,6 +110,59 @@ void companies::ReadAllRecords(const string path)
 			delete[]buf;
 			
 			agent.Show();
+		}
+	}
+	fin.close();
+}
+
+void companies::FindbyName(const string path, const string name)
+{
+	char* buf;
+	ifstream fin;
+	companies agent;
+	size_t i = 0;
+	cout << "Результаты поиска: \n";
+	fin.open(path, ifstream::binary);
+	if (!fin.is_open()) cout << "Ошибка открытия файла данных!";
+	else
+	{
+		size_t size;
+		while (fin.read((char*)&size, sizeof(size_t)))
+		{
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.company_name = buf;
+			delete[]buf;
+
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.owner = buf;
+			delete[]buf;
+
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.phone_number = buf;
+			delete[]buf;
+
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.address = buf;
+			delete[]buf;
+
+			fin.read((char*)&size, sizeof(size_t));
+			buf = new char[size];
+			fin.read(buf, size);
+			agent.occupation = buf;
+			delete[]buf;
+			
+			if (agent.company_name.find(name) != std::string::npos)
+			{
+				cout << ++i << ") ";
+				agent.Show();
+			}
 		}
 	}
 	fin.close();

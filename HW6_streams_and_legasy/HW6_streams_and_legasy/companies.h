@@ -25,5 +25,6 @@ public:
 	~companies();
 	void PushRecord(const string path);
 	void ReadAllRecords(const string path);
+	void FindbyName(const string path, const string name);
 };
 
