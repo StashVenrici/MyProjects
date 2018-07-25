@@ -25,6 +25,7 @@ public:
 	~companies();
 	void PushRecord(const string path);
 	void ReadAllRecords(const string path);
-	void FindbyName(const string path, const string name);
+	friend bool find_name(companies agent, string name);
+	void Findby___(const string path, const string name, string by__);
 };
 

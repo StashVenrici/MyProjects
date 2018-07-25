@@ -115,11 +115,25 @@ void companies::ReadAllRecords(const string path)
 	fin.close();
 }
 
-void companies::FindbyName(const string path, const string name)
+bool find_name(companies agent, string name)
+{
+	return (agent.company_name == name);
+}
+
+void companies::Findby___(const string path, const string name, string by__)
 {
 	char* buf;
 	ifstream fin;
-	companies agent;
+	//companies agent;
+
+	//а обязательно нужно очищать или можно как-то по другому?
+	this->company_name = "";
+	this->owner = "";
+	this->phone_number = "";
+	this->address = "";
+	this->occupation = "";
+
+
 	size_t i = 0;
 	cout << "Результаты поиска: \n";
 	fin.open(path, ifstream::binary);
@@ -131,37 +145,44 @@ void companies::FindbyName(const string path, const string name)
 		{
 			buf = new char[size];
 			fin.read(buf, size);
-			agent.company_name = buf;
+			this->company_name = buf;
 			delete[]buf;
 
 			fin.read((char*)&size, sizeof(size_t));
 			buf = new char[size];
 			fin.read(buf, size);
-			agent.owner = buf;
+			this->owner = buf;
 			delete[]buf;
 
 			fin.read((char*)&size, sizeof(size_t));
 			buf = new char[size];
 			fin.read(buf, size);
-			agent.phone_number = buf;
+			this->phone_number = buf;
 			delete[]buf;
 
 			fin.read((char*)&size, sizeof(size_t));
 			buf = new char[size];
 			fin.read(buf, size);
-			agent.address = buf;
+			this->address = buf;
 			delete[]buf;
 
 			fin.read((char*)&size, sizeof(size_t));
 			buf = new char[size];
 			fin.read(buf, size);
-			agent.occupation = buf;
+			this->occupation = buf;
 			delete[]buf;
 			
-			if (agent.company_name.find(name) != std::string::npos)
+			/*if (fnptr(*this, name))
 			{
 				cout << ++i << ") ";
-				agent.Show();
+				this->Show();
+			}*/
+
+			switch (by__)
+			{
+
+			default:
+				break;
 			}
 		}
 	}
